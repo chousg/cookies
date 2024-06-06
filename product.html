@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Welcome to the Product Page!</h1>  
+
+
+<script>
+  window.onload = function() {  
+    var storedUsername = getCookie('username');  
+    var loginToken = getCookie('login'); 
+  
+    if (!storedUsername || !loginToken) {  
+       
+        window.location.href = 'index.html'; 
+    } else {  
+        alert("welcome back"+storedUsername);
+        console.log('Welcome back, ' + storedUsername);  
+    }  
+};  
+  
+function getCookie(name) {  
+    var cookies = document.cookie.split(";");  
+    for (var i = 0; i < cookies.length; i++) {  
+        var cookie = cookies[i].trim();  
+        if (cookie.startsWith(name + "=")) {  
+            return cookie.substring(name.length + 1);  
+        }  
+    }  
+    return null;  
+}
+
+
+
+</script>
+
+</body>
+</html>
